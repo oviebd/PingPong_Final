@@ -68,7 +68,7 @@ public class ObstacleManager : MonoBehaviour
 		float perItemSize = itemSize + gap;
 
 		itemPerRow =  ((int)(Mathf.Ceil(Mathf.Abs(maxLeftPos_X) + Mathf.Abs(maxRightPos_X)) / perItemSize)) + 1;
-		Debug.Log("U>> per row " + itemPerRow);
+		//Debug.Log("U>> per row " + itemPerRow);
 
 		int currentRow = (itemNumber) / itemPerRow;
 		int currentColumn = Mathf.Abs(itemNumber - (currentRow * itemPerRow));
