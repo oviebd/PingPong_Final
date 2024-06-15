@@ -1600,6 +1600,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983264175}
     m_Modifications:
+    - target: {fileID: 507209019676891759, guid: 7a1a3ba4a552e430d8470a6d74641e51, type: 3}
+      propertyPath: initialVelocity.x
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1092463809649240344, guid: 7a1a3ba4a552e430d8470a6d74641e51, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -1659,6 +1663,10 @@ PrefabInstance:
     - target: {fileID: 1444607267697852930, guid: 7a1a3ba4a552e430d8470a6d74641e51, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444607267697852930, guid: 7a1a3ba4a552e430d8470a6d74641e51, type: 3}
+      propertyPath: m_TagString
+      value: ball
       objectReference: {fileID: 0}
     - target: {fileID: 2260624893443056775, guid: 7a1a3ba4a552e430d8470a6d74641e51, type: 3}
       propertyPath: m_Material
