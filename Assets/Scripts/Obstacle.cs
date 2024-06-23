@@ -26,6 +26,8 @@ public class Obstacle : MonoBehaviour
 		audioSource.Play();
 		spriteRenderer.enabled = false;
 		collider.enabled = false;
+
+		GameManager.instance.IncrementScore(1);
 	}
 
 }

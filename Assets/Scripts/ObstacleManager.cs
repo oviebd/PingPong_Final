@@ -5,8 +5,6 @@ using UnityEngine;
 public class ObstacleManager : MonoBehaviour
 {
 
-    public static ObstacleManager instance;
-
     public GameObject parentObj;
     public GameObject obstaclePrefab;
 
@@ -21,28 +19,19 @@ public class ObstacleManager : MonoBehaviour
 	public int totalObstacleNumber = 100;
 	public float maxRightPos_X = 0;
 	public float maxLeftPos_X = 0;
-	public float startYPos = 0;
+	public float startYPos = 5;
 
 
 	private int itemPerRow = 1;
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
+   
+  //  void Start()
+  //  {
+		//SpawnObstacle();
+  //  }
 
-    void Start()
-    {
-		SpawnObstacle();
-    }
-
-	void SpawnObstacle()
+	public void SpawnObstacle()
 	{
-
-		
-
-		//	objNumber = 100;
 		for (int i = 0; i < totalObstacleNumber; i++)
 		{
 			GameObject obstacle = obstaclePrefab;
@@ -50,14 +39,6 @@ public class ObstacleManager : MonoBehaviour
 			Vector2 pos = GetPos(i);
 			//Debug.Log("ItemPos " + pos);
 			obj.transform.position = new Vector3(pos.x, pos.y);
-
-
-			//ObstacleBehaviour behaviour = obj.GetComponent<ObstacleBehaviour>();
-			//if (behaviour != null)
-			//{
-			//	behaviour.SetUp();
-			//	maxPointInLevel = maxPointInLevel + behaviour.GetObstacleClass().value;
-			//}
 			obstacleList.Add(obj);
 		}
 	
