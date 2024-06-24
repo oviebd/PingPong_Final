@@ -7,17 +7,34 @@ public class GameEnvironmentManager : MonoBehaviour
 
     public ObstacleManager obstacleManager;
     public GameObject paddleObj;
+    public GameObject ballPrefabObj;
+
     public GameObject ballObj;
 
-    public void SpawnBall()
+    
+
+    public void OnGameStart()
     {
-        Vector3 parentPos = paddleObj.transform.position;
-        GameObject newObj = Instantiate(ballObj, paddleObj.transform, false);
-       // newObj.GetComponent<BallMovement>()
-       // newObj.transform.parent = parentObj.transform;
+        SpawnObstacle();
+        SpawnBall();
+        paddleObj.SetActive(true);
     }
 
-    public void SpawnObstacle()
+    public void OnGameOver()
+    {
+       
+        obstacleManager.DeleteAllObstacles();
+        paddleObj.SetActive(false);
+        Destroy(ballObj, 1.0f);
+    }
+
+    private void SpawnBall()
+    {
+        ballObj = Instantiate(ballPrefabObj, paddleObj.transform, false);
+      
+    }
+
+    private void SpawnObstacle()
     {
         obstacleManager.SpawnObstacle();
     }

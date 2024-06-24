@@ -21,8 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        environmentManager.SpawnBall();
-        environmentManager.SpawnObstacle();
+        environmentManager.OnGameStart();
 
         int currentScore = scoreManager.ResetScore();
         uiManager.UpdateScoreText(currentScore);
@@ -30,7 +29,8 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-
+        environmentManager.OnGameOver();
+        uiManager.OnGameOver();
     }
 
     public void IncrementScore(int score)

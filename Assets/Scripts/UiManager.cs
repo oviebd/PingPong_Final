@@ -23,6 +23,11 @@ public class UiManager : MonoBehaviour
         LoadOnGameUI();
     }
 
+    public void OnGameOver()
+    {
+        LoadMenuUI();
+    }
+
     public void UpdateScoreText(int score)
     {
         scoreText.text = score + "";

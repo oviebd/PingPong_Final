@@ -66,4 +66,15 @@ public class ObstacleManager : MonoBehaviour
 		newObj.transform.parent = parentObj.transform;
 		return newObj;
 	}
+
+	public void DeleteAllObstacles()
+    {
+		for (int i = 0; i < obstacleList.Count; i++)
+        {
+			Destroy(obstacleList[i].gameObject);
+        }
+
+		obstacleList = new List<GameObject>();
+
+	}
 }
