@@ -24,11 +24,6 @@ public class ObstacleManager : MonoBehaviour
 
 	private int itemPerRow = 1;
 
-   
-  //  void Start()
-  //  {
-		//SpawnObstacle();
-  //  }
 
 	public void SpawnObstacle()
 	{
