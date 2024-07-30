@@ -7,9 +7,7 @@ public class ObstacleManager : MonoBehaviour
 
     public GameObject parentObj;
     public GameObject obstaclePrefab;
-
-
-	[SerializeField] private List<GameObject> _obstaclePrefabList;
+	
 
     public float itemSize = .33f;
 	public float gap = 0.1f;
@@ -17,15 +15,20 @@ public class ObstacleManager : MonoBehaviour
     private List<GameObject> obstacleList = new List<GameObject>();
 
 	public int totalObstacleNumber = 100;
-	public float maxRightPos_X = 0;
-	public float maxLeftPos_X = 0;
+	public float maxRightPos_X = 2.5f;
+	public float maxLeftPos_X = -2.5f;
 	public float startYPos = 5;
 
 
 	private int itemPerRow = 1;
 
+    private void Start()
+    {
+		SpawnObstacle();
 
-	public void SpawnObstacle()
+	}
+
+    public void SpawnObstacle()
 	{
 		for (int i = 0; i < totalObstacleNumber; i++)
 		{
@@ -56,7 +59,6 @@ public class ObstacleManager : MonoBehaviour
 
 	private GameObject InstantiateObject(GameObject obj)
 	{
-		Vector3 parentPos = parentObj.transform.position;
 		GameObject newObj = Instantiate(obj, parentObj.transform, false);
 		newObj.transform.parent = parentObj.transform;
 		return newObj;
@@ -68,7 +70,6 @@ public class ObstacleManager : MonoBehaviour
         {
 			Destroy(obstacleList[i].gameObject);
         }
-
 		obstacleList = new List<GameObject>();
 
 	}

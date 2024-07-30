@@ -7,7 +7,7 @@ public class UiManager : MonoBehaviour
 {
 
     public GameObject menuUI;
-    public GameObject onGameUI;
+    public GameObject scoreUI;
 
     public TMP_Text scoreText;
 
@@ -20,7 +20,7 @@ public class UiManager : MonoBehaviour
     public void OnStartGamePressed()
     {
         GameManager.instance.StartGame();
-        LoadOnGameUI();
+        LoadScoreUI();
     }
 
     public void OnGameOver()
@@ -33,15 +33,15 @@ public class UiManager : MonoBehaviour
         scoreText.text = score + "";
     }
 
-    private void LoadOnGameUI()
+    private void LoadScoreUI()
     {
-        onGameUI.SetActive(true);
+        scoreUI.SetActive(true);
         menuUI.SetActive(false);
     }
 
     private void LoadMenuUI()
     {
-        onGameUI.SetActive(false);
+        scoreUI.SetActive(false);
         menuUI.SetActive(true);
     }
 
